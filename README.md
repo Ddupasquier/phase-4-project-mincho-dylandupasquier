@@ -1,6 +1,11 @@
 To Run Both servers Use:
 foreman start -f Procfile.dev
 
+then open 
+localhost:3000 (back-end)
+and 
+localhost:4000 (front-end)
+
 
 # Project Template: React/Rails API
 
