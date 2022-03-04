@@ -1,0 +1,23 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: rgb(240, 237, 227);
+}
+
+header {
+    /* height: 50px; */
+    border: solid 1px;
+}
+
+main {
+    height: 100%;
+    border: solid 1px;
+}
+
+footer {
+    height: 50px;
+    border: solid 1px;
+}
