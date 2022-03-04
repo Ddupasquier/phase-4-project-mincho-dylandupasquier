@@ -6,9 +6,6 @@ localhost:3000 (back-end)
 and 
 localhost:4000 (front-end)
 
-
-# Project Template: React/Rails API
-
 ## Description
 
 This project is scaffolded so that you can build a React frontend and Rails
