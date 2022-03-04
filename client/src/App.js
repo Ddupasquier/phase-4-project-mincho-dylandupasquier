@@ -1,4 +1,4 @@
-import Nav from "./Components/Nav";
+import SlideNav from "./Components/SlideNav/SlideNav";
 import Main from "./Components/Main";
 import Footer from "./Components/Footer";
 import "./index.css";
@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Nav />
+        <SlideNav />
       </header>
       <Main />
       <Footer />

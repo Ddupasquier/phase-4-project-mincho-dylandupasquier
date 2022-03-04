@@ -1,23 +1,66 @@
-body, html {
-    margin: 0;
-    padding: 0;
+body,
+html {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background: rgb(240, 237, 227);
+  background: rgb(240, 237, 227);
 }
 
 header {
-    /* height: 50px; */
-    border: solid 1px;
+  border: none;
 }
 
 main {
-    height: 100%;
-    border: solid 1px;
+  height: 100%;
+  width: 100%;
+  /* position: relative; */
+}
+
+main > p {
+  padding-left: 3%;
+  padding-right: 3%;
+  text-indent: 30px;
+  margin-top: 2%;
 }
 
 footer {
-    height: 50px;
-    border: solid 1px;
+  height: 50px;
+  text-align: right;
+  background: rgba(255, 255, 255, 0.253);
+}
+
+.navbar {
+  background: rgba(255, 255, 255, 0.644);
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+}
+
+.navtitle {
+  float: left;
+  font-size: 2rem;
+  margin-left: 2%;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.navlink {
+  margin-right: 2%;
+}
+
+.slideimg {
+  background-position: center center;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  /* margin-bottom: 7%; */
+}
+
+.image-container > img {
+  width: 100%;
 }
