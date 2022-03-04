@@ -1,3 +1,7 @@
+To Run Both servers Use:
+foreman start -f Procfile.dev
+
+
 # Project Template: React/Rails API
 
 ## Description
