@@ -43,10 +43,17 @@ footer {
   font-size: 2rem;
   margin-left: 2%;
   font-family: "Times New Roman", Times, serif;
+  text-shadow: 2px 2px #69696967;
 }
 
 .navlink {
   margin-right: 2%;
+}
+
+.link {
+  text-decoration: none;
+  font-family: "Times New Roman", Times, serif;
+  color: black;
 }
 
 .slideimg {
