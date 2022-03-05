@@ -20,19 +20,15 @@ const fadeImages = [
   },
 ];
 
-
-  const slides = fadeImages.map((fadeImage, index) => {
-    return (
-      <>
-        <div className="each-fade" key={index}>
-          <div className="image-container">
-            <img src={fadeImage.url} />
-          </div>
-        </div>
-      </>
-    );
-  });
-
+const slides = fadeImages.map((fadeImage, index) => {
+  return (
+    <div className="each-fade" key={index}>
+      <div className="image-container">
+        <img src={fadeImage.url} />
+      </div>
+    </div>
+  );
+});
 
 function Carousel() {
   return (
