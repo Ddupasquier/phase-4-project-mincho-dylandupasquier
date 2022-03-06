@@ -20,7 +20,13 @@ result.each do |park|
     park['activities'].each do |activity|
         p.activities.create(name: activity['name'])
     end
+    # p.entrance_fees.create()
 end
+
+#i need to create the other instances based on associations but running into error
+#then finalize the routes
+#establish controllers based on the routes
+#SHOULD I USE SERIALIZERS TO RESTRICT API IMPORTS
 
 
 #API KEY

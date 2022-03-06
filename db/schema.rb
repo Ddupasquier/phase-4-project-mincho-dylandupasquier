@@ -16,12 +16,16 @@ ActiveRecord::Schema.define(version: 2022_03_04_232547) do
   enable_extension "plpgsql"
 
   create_table "activities", force: :cascade do |t|
+    t.bigint "park_id"
     t.string "name"
+    t.index ["park_id"], name: "index_activities_on_park_id"
   end
 
   create_table "entrance_fees", force: :cascade do |t|
     t.string "cost"
     t.string "description"
+    t.bigint "park_id"
+    t.index ["park_id"], name: "index_entrance_fees_on_park_id"
   end
 
   create_table "images", force: :cascade do |t|
@@ -29,10 +33,14 @@ ActiveRecord::Schema.define(version: 2022_03_04_232547) do
     t.string "title"
     t.string "altText"
     t.string "caption"
+    t.bigint "park_id"
+    t.index ["park_id"], name: "index_images_on_park_id"
   end
 
   create_table "operatingHours", force: :cascade do |t|
     t.string "description"
+    t.bigint "park_id"
+    t.index ["park_id"], name: "index_operatingHours_on_park_id"
   end
 
   create_table "parks", force: :cascade do |t|
