@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :images
   resources :entrance_fees, only: [:index, :show, :update]
   resources :activities, only: [:index, :show, :create]
-  resources :parks
+
+  #parks only need to index and show
+  resources :parks, only: [:index, :show]
   resources :users, only: [:index, :show]
 
   #each class has the specified url routes available
