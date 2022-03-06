@@ -24,15 +24,16 @@ ActiveRecord::Schema.define(version: 2022_03_04_232547) do
   create_table "entrance_fees", force: :cascade do |t|
     t.string "cost"
     t.string "description"
+    t.string "title"
     t.bigint "park_id"
     t.index ["park_id"], name: "index_entrance_fees_on_park_id"
   end
 
   create_table "images", force: :cascade do |t|
-    t.string "credit"
     t.string "title"
     t.string "altText"
     t.string "caption"
+    t.string "url"
     t.bigint "park_id"
     t.index ["park_id"], name: "index_images_on_park_id"
   end

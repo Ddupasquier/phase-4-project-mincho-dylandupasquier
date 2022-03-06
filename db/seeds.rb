@@ -20,7 +20,13 @@ result.each do |park|
     park['activities'].each do |activity|
         p.activities.create(name: activity['name'])
     end
-    # p.entrance_fees.create()
+    park['entranceFees'].each do |fee|
+        p.entrance_fees.create(cost: fee['cost'], description: fee['description'], title: fee['title'])
+    end
+    park['images'].each do |image|
+        p.images.create(title: image['title'], caption: image['caption'], url: image['url'], altText: image['altText'])
+    end
+   
 end
 
 #i need to create the other instances based on associations but running into error
