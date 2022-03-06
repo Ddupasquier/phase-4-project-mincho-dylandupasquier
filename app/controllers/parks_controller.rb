@@ -5,7 +5,7 @@ class ParksController < ApplicationController
 
     def show
         park = find_park
-        render json: episode, serializer: ParkshowserializerSerializer
+        render json: parks
     end
 
     def index
@@ -32,7 +32,7 @@ class ParksController < ApplicationController
 
     private
 
-    def find_episode
+    def find_park
         Park.find(params[:id])
     end
 
