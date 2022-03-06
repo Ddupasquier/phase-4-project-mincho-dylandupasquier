@@ -1,23 +1,97 @@
-body, html {
-    margin: 0;
-    padding: 0;
+@import '~mdb-ui-kit/css/mdb.min.css';
+
+body,
+html {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background: rgb(240, 237, 227);
+  background: rgb(240, 237, 227);
 }
 
 header {
-    /* height: 50px; */
-    border: solid 1px;
+  border: none;
 }
 
 main {
-    height: 100%;
-    border: solid 1px;
+  height: 100%;
+  width: 100%;
+  /* position: relative; */
+}
+
+main > p {
+  padding-left: 3%;
+  padding-right: 3%;
+  text-indent: 30px;
+  margin-top: 2%;
 }
 
 footer {
-    height: 50px;
-    border: solid 1px;
+  /* height: 50px; */
+  text-align: right;
+  background: rgba(255, 255, 255, 0.253);
+  font-size: .5rem;
+  padding-right: 1rem;
+}
+
+.navbar {
+  background: rgba(255, 255, 255, 0.644);
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+}
+
+.navtitle {
+  float: left;
+  font-size: 2rem;
+  margin-left: 2%;
+  font-family: "Times New Roman", Times, serif;
+  text-shadow: 2px 2px #69696967;
+}
+
+.navlink {
+  margin-right: 2%;
+}
+
+.link {
+  text-decoration: none;
+  font-family: "Times New Roman", Times, serif;
+  color: black;
+}
+
+.slideimg {
+  background-position: center center;
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+
+.image-container > img {
+  width: 100%;
+}
+
+.sortsearch {
+  text-align: right;
+  padding: 3px;
+  margin-right: .2rem;
+  color: black;
+  /* z-index: -10; */
+}
+
+.searchinp {
+  font-size: .8rem;
+  height: 25px;
+  position: relative;
+  bottom: 6px;
+  right: 6px;
+}
+
+.tocenter {
+  text-align: center;
+  margin: 0;
 }
