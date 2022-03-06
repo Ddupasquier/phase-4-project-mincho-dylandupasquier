@@ -24,7 +24,7 @@ const slides = fadeImages.map((fadeImage, index) => {
   return (
     <div className="each-fade" key={index}>
       <div className="image-container">
-        <img src={fadeImage.url} />
+        <img src={fadeImage.url} alt="carouselimages" />
       </div>
     </div>
   );

@@ -1,0 +1,28 @@
+.grid-container {
+  place-items: center;
+  display: grid;
+  grid: repeat(4, 1fr) / repeat(5, 1fr);
+  height: 50rem;
+  padding: 2%;
+  background: rgb(255, 250, 242);
+  gap: 2%;
+  margin-bottom: 1%;
+}
+
+.grid-square {
+  border: thin solid rgba(53, 53, 53, 0.534);
+  border-radius: .2rem;
+  background: white;
+  width: 100%;
+  height: 100%;
+  transition: height .5s, width .5s;
+  overflow: hidden;
+  box-shadow: 1px 1px 7px;
+}
+
+.grid-square:hover {
+  border-width: medium;
+  width: 120%;
+  height: 140%;
+  z-index: 10;
+}

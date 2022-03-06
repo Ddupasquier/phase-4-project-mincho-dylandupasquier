@@ -7,9 +7,9 @@ function Nav() {
       <div className="navbar">
         <div className="navtitle">National Parks</div>
         <div className="navlink">
-          <Link to="" className="link">Home | </Link>
-          <Link to="" className="link">Parks | </Link>
-          <Link to="" className="link">Campgrounds</Link>
+          <Link to="/" className="link">Parks | </Link>
+          <Link to="/activities" className="link">Activities | </Link>
+          <Link to="/campgrounds" className="link">Campgrounds</Link>
         </div>
       </div>
       {/* <Navbar bg="light" variant="light">

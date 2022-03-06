@@ -68,7 +68,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 30vh;
+  height: 50vh;
 }
 
 .image-container > img {
@@ -80,6 +80,7 @@ footer {
   padding: 3px;
   margin-right: .2rem;
   color: black;
+  /* z-index: -10; */
 }
 
 .searchinp {
@@ -88,4 +89,9 @@ footer {
   position: relative;
   bottom: 6px;
   right: 6px;
+}
+
+.tocenter {
+  text-align: center;
+  margin: 0;
 }
