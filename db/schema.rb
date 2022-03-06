@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 2022_03_04_232547) do
   enable_extension "plpgsql"
 
   create_table "activities", force: :cascade do |t|
-    t.integer "park_id"
     t.string "name"
   end
 
@@ -32,7 +31,7 @@ ActiveRecord::Schema.define(version: 2022_03_04_232547) do
     t.string "caption"
   end
 
-  create_table "operating_hours", force: :cascade do |t|
+  create_table "operatingHours", force: :cascade do |t|
     t.string "description"
   end
 
