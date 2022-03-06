@@ -26,9 +26,9 @@ result.each do |park|
     park['images'].each do |image|
         p.images.create(title: image['title'], caption: image['caption'], url: image['url'], altText: image['altText'])
     end
-#    park['operatingHours'].each do |hours|
-#         p.operatingHours.create()
-#    end
+    # hoursArray = park['operating_hours']
+    # hoursHash = hoursArray [0]
+    # p.operatingHours.create(description: hoursHash['description'])
 end
 
 #i need to create the other instances based on associations but running into error
