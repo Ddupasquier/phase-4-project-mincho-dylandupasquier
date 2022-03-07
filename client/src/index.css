@@ -80,6 +80,7 @@ footer {
   padding: 3px;
   margin-right: .2rem;
   color: black;
+  z-index: -10;
 }
 
 .searchinp {

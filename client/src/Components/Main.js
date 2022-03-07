@@ -5,13 +5,9 @@ import ParkCard from "./ParkCard";
 
 function Main() {
   const [allParks, setAllParks] = useState([]);
-  const [sortBy, setSortBy] = useState(localStorage.getItem("sortBy") || "");
+  const [page, setPage] = useState(1)
+  const [sortBy, setSortBy] = useState("name");
   const [search, setSearch] = useState("");
-
-  useEffect(() => {
-    localStorage.setItem("sortBy", sortBy);
-  }, [sortBy]);
-
   const sortedParks = [...allParks].sort(compare);
 
   const searchParks = sortedParks.filter((park) => {
@@ -19,34 +15,44 @@ function Main() {
   });
 
   function compare(a, b) {
-    if (sortBy === "state") {
-      if (parseInt(a[sortBy]) < parseInt(b[sortBy])) {
-        return -1;
-      }
-      return 0;
-    }
+    // if (sortBy === "") {
+    //   if (parseInt(a[sortBy]) < parseInt(b[sortBy])) {
+    //     return -1;
+    //   }
+    //   return 0;
+    // }
     if (a[sortBy] < b[sortBy]) {
       return -1;
     }
     return 0;
   }
 
+
   useEffect(() => {
-    fetch("/parks?limit=20&page=10")
+    fetch(`/parks?limit=20&page=${page}`)
       .then((res) => res.json())
       .then((data) => {
         setAllParks(data.parks);
       });
   }, []);
 
-  if (allParks === 0) {
+  if (allParks.length === 0) {
     return <h1>Loading...</h1>;
   }
 
+  function incPage() {
+    setPage(page + 1)
+  }
+
+  function decPage() {
+    setPage(page - 1)
+  }
+
   const eachPark = searchParks.map((park) => {
+    // console.log(park)
     return <ParkCard park={park} key={park.id} />;
   });
-
+  
   return (
     <main>
       <SortSearch
@@ -57,8 +63,8 @@ function Main() {
       />
       <div className="grid-container">{eachPark}</div>
       <div className="tocenter">
-        <button className="btn">Back</button>{" "}
-        <button className="btn">More</button>
+        <button className="btn" onClick={decPage}>Back</button>{" "}
+        <button className="btn" onClick={incPage} >More</button>
       </div>
     </main>
   );
