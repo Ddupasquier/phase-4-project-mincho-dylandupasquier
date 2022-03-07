@@ -19,7 +19,7 @@ function Main() {
   });
 
   function compare(a, b) {
-    if (sortBy === "states") {
+    if (sortBy === "state") {
       if (parseInt(a[sortBy]) < parseInt(b[sortBy])) {
         return -1;
       }
@@ -35,7 +35,6 @@ function Main() {
     fetch("/parks?limit=20&page=10")
       .then((res) => res.json())
       .then((data) => {
-        debugger;
         setAllParks(data.parks);
       });
   }, []);

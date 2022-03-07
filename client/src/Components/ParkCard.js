@@ -1,10 +1,20 @@
 import React from "react";
 function ParkCard({ park: { images, name, states } }) {
-  debugger;
+    const bgImg = {
+        
+            backgroundImage: `url(${images[0].url})`,
+            backgroundPosition: "50% 50%",
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',    
+    }
+
   return (
-    //   might make images BG images and c/c
-    <div className="grid-square">
-      <img src={images[0].url} />
+    
+    <div
+      className="grid-square"
+      style={bgImg}
+    >
+      {/* <img src={images[0].url} /> */}
       <div className="parkInfo">
         {name}
         <br />
