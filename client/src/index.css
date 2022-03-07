@@ -80,15 +80,19 @@ footer {
   padding: 3px;
   margin-right: .2rem;
   color: black;
-  /* z-index: -10; */
 }
 
 .searchinp {
   font-size: .8rem;
   height: 25px;
   position: relative;
-  bottom: 6px;
+  top: 0px;
   right: 6px;
+}
+
+.searchdrop {
+height: 25px;
+font-size: .8rem;
 }
 
 .tocenter {

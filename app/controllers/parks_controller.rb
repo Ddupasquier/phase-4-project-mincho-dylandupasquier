@@ -9,8 +9,17 @@ class ParksController < ApplicationController
     end
 
     def index
-        parks = Park.all
-        render json: parks
+        page = params[:page]
+        if params[:limit]
+            parks = Park.all.limit(params[:limit]).offset((page.to_i - 1) * params[:limit].to_i)
+            if parks.empty?
+                parks = Park.all.limit(params[:limit])
+                page = 1
+            end
+        else
+            parks = Park.all
+        end
+        render json: {parks: parks, page: page }, include: :images
     end
 
     # def create
