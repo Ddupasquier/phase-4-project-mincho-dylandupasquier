@@ -5,7 +5,7 @@ class ParksController < ApplicationController
 
     def show
         park = find_park
-        render json: parks
+        render json: park
     end
 
     def index

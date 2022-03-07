@@ -6,6 +6,8 @@ import ParkCard from "./ParkCard";
 function Main() {
   const [allParks, setAllParks] = useState([]);
 
+  
+
   useEffect(() => {
     fetch("/parks")
       .then((res) => res.json())
@@ -14,11 +16,15 @@ function Main() {
       });
   }, []);
 
+  if (allParks === 0) {
+    return <h1>Loading...</h1>
+  }
+
   // console.log(allParks);
 
   // This will be usable once I have something to render
   const eachPark = allParks.map((park) => {
-    return <ParkCard />;
+    return <ParkCard park={park} key={park.id} />;
   });
 
   return (

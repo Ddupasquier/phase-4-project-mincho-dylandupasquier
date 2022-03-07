@@ -20,9 +20,23 @@
   box-shadow: 1px 1px 7px;
 }
 
+.grid-square > img {
+  height: 100%;
+}
+
 .grid-square:hover {
   border-width: medium;
   width: 120%;
   height: 140%;
   z-index: 10;
+}
+
+.parkInfo {
+  position: relative;
+  word-wrap: break-word;
+  color: rgb(0, 0, 0);
+  background: rgba(255, 255, 255, 0.514);
+  padding:1%;
+  top: -100%;
+  font-family:'Times New Roman', Times, serif;
 }
