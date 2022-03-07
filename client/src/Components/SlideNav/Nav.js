@@ -1,7 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Login from "../Login";
 import { Link } from "react-router-dom";
 
 function Nav() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    fetch("/me").then((response) => {
+      if (response.ok) {
+        response.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
+
+  function onLogout() {
+    setUser(null);
+  }
+
+  function handleLogout() {
+    fetch("/logout", {
+      method: "DELETE",
+    }).then(() => onLogout());
+  }
+
+  function renderLogin() {
+    if (user !== null) {
+      return (
+        <>
+          <p className="loginmsg">Welcome, {user.username}!</p>
+          <button onClick={handleLogout} className="loginbtn">
+            Logout
+          </button>
+        </>
+      );
+    } else {
+      return <Login user={user} onLogin={setUser} />;
+    }
+  }
+
   return (
     <>
       <div className="navbar">
@@ -11,26 +47,8 @@ function Nav() {
           <Link to="/activities" className="link">Activities | </Link>
           <Link to="/campgrounds" className="link">Campgrounds</Link>
         </div>
+        {renderLogin()}
       </div>
-      {/* <Navbar bg="light" variant="light">
-        <Container>
-          <Navbar.Brand href="">
-            <h2 className="navtitle">National Parks</h2>
-          </Navbar.Brand>
-          <Navs className="me-auto navlinks">
-            <Navs.Link href="" className="">
-              Home
-            </Navs.Link>
-            <Navs.Link href="" className="">
-              Parks
-            </Navs.Link>
-            <Navs.Link href="" className="">
-              Campgrounds
-            </Navs.Link>
-            <Navbar.Text></Navbar.Text>
-          </Navs>
-        </Container>
-      </Navbar> */}
     </>
   );
 }
