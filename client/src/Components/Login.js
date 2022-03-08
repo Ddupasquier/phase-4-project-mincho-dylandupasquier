@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Modal from "react-bootstrap/Modal";
 
 function Login({ onLogin }) {
-    const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
