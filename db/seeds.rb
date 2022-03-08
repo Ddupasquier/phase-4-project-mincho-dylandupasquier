@@ -3,7 +3,7 @@ Park.destroy_all
 Activity.destroy_all
 
 puts "Users..."
-# User.create!(username: "Dylan Dupasquier", password: "flatironschool", city: "Portland", state: "Oregon")
+# User.create!(username: "Dylan Dupasquier", password: "flatironschool")
 
 require 'uri'
 require 'net/http'
