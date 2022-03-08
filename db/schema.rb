@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_07_002343) do
+ActiveRecord::Schema.define(version: 2022_03_07_002306) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,18 +24,17 @@ ActiveRecord::Schema.define(version: 2022_03_07_002343) do
   create_table "entrance_fees", force: :cascade do |t|
     t.string "cost"
     t.string "description"
-    t.bigint "park_id"
     t.string "title"
+    t.bigint "park_id"
     t.index ["park_id"], name: "index_entrance_fees_on_park_id"
   end
 
   create_table "images", force: :cascade do |t|
-    t.string "credit"
     t.string "title"
     t.string "altText"
     t.string "caption"
-    t.bigint "park_id"
     t.string "url"
+    t.bigint "park_id"
     t.index ["park_id"], name: "index_images_on_park_id"
   end
 
@@ -57,11 +56,7 @@ ActiveRecord::Schema.define(version: 2022_03_07_002343) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "password"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "city"
-    t.string "state"
+    t.string "password_digest"
   end
 
 end
