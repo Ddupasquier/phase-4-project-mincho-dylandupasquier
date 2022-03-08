@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    wrao_parameters format: []
+    wrap_parameters format: []
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
 
     def index
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
         render json:user
     end
 
-    private user_params
+    private
 
     def render_unprocessable_entity(invalid)
         render json:{error: invalid.record.errors}, status: :render_unprocessable_entity

@@ -4,7 +4,7 @@ import Modal from "react-bootstrap/Modal";
 function Login({ onLogin }) {
     const [show, setShow] = useState(false);
   const [username, setUsername] = useState("");
-//   const [password, setPassword] = useState("");
+  const [password, setPassword] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -47,12 +47,12 @@ function Login({ onLogin }) {
               onChange={(e) => setUsername(e.target.value)}
             ></input>
             <br />
-            {/* <input
+            <input
               type="text"
               placeholder="Password"
               value={password}
-              onChange={(e) => setUsername(e.target.value)}
-            ></input> */}
+              onChange={(e) => setPassword(e.target.value)}
+            ></input>
             <br />
             <button type="submit" className="button">
               Login
