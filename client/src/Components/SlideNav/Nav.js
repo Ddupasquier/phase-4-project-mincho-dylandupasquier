@@ -26,12 +26,12 @@ function Nav() {
   function renderLogin() {
     if (user !== null) {
       return (
-        <>
+        <div className="welcomeCont">
           <p className="loginmsg">Welcome, {user.username}!</p>
-          <button onClick={handleLogout} className="loginbtn">
+          <button onClick={handleLogout} className="button logoutbtn">
             Logout
           </button>
-        </>
+        </div>
       );
     } else {
       return <Login user={user} onLogin={setUser} />;

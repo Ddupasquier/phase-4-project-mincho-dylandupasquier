@@ -101,8 +101,51 @@ font-size: .8rem;
   margin: 0;
 }
 
+.button {
+  background: white;
+  border-radius: 6px;
+  border: none;
+}
+
+.modal {
+  background: rgba(0, 0, 0, 0.137);
+}
+
+.loginform {
+  margin: auto;
+  text-align: center;
+  /* padding: 1vh; */
+  padding: 3rem;
+  width:100%;
+  height: 95%;
+  background: rgb(196, 197, 150);
+  /* border: solid 7px rgba(0, 0, 0, 0.336); */
+  border-radius: 5px;
+  /* box-shadow: 5px 2px 28px; */
+}
+
+.loginform > input {
+  margin: .1rem;
+}
+
+.loginmsg {
+  float: left;
+}
+
 .loginbtn {
   position: absolute;
-  right: 3%;
-  top: 100%;
+  right: 5%;
+  top: 80%;
+}
+
+/* .logoutbtn {
+  margin-left: 1%;
+} */
+
+.welcomeCont {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.349);
+  padding: 1%;
+  right: 5%;
+  top: 80%;
 }
