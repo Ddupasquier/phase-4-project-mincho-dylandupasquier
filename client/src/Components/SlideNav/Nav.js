@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Nav() {
   const [user, setUser] = useState(null);
-  const [errors, setErrors] = useState([]);
+  
 
   // fails to create session bc invalid username/password
   //thus when the below fetch called is performed, session fails bc no session
@@ -40,7 +40,7 @@ function Nav() {
         </div>
       );
     } else {
-      return <Login user={user} onLogin={setUser} setErrors={setErrors} />;
+      return <Login user={user} onLogin={setUser} />;
     }
   }
 
