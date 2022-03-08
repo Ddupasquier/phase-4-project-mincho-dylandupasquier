@@ -6,6 +6,10 @@ function Nav() {
   const [user, setUser] = useState(null);
   const [errors, setErrors] = useState([]);
 
+  // fails to create session bc invalid username/password
+  //thus when the below fetch called is performed, session fails bc no session
+  //response.ok should fail...
+
   useEffect(() => {
     fetch("/me").then((response) => {
       if (response.ok) {
@@ -57,7 +61,7 @@ function Nav() {
             Campgrounds
           </Link>
         </div>
-        {renderLogin(console.log(user))}
+        {renderLogin()}
       </div>
     </>
   );
