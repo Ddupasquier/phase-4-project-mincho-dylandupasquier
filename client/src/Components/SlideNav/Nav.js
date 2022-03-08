@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 function Nav() {
   const [user, setUser] = useState(null);
+  const [errors, setErrors] = useState([]);
 
   useEffect(() => {
     fetch("/me").then((response) => {
@@ -24,6 +25,7 @@ function Nav() {
   }
 
   function renderLogin() {
+    console.log(user);
     if (user !== null) {
       return (
         <div className="welcomeCont">
@@ -34,7 +36,7 @@ function Nav() {
         </div>
       );
     } else {
-      return <Login user={user} onLogin={setUser} />;
+      return <Login user={user} onLogin={setUser} setErrors={setErrors} />;
     }
   }
 
@@ -43,11 +45,19 @@ function Nav() {
       <div className="navbar">
         <div className="navtitle">National Parks</div>
         <div className="navlink">
-          <Link to="/" className="link">Parks</Link>{" | "}
-          <Link to="/activities" className="link">My Profile</Link>{" | "}
-          <Link to="/campgrounds" className="link">Campgrounds</Link>
+          <Link to="/" className="link">
+            Parks
+          </Link>
+          {" | "}
+          <Link to="/activities" className="link">
+            My Profile
+          </Link>
+          {" | "}
+          <Link to="/campgrounds" className="link">
+            Campgrounds
+          </Link>
         </div>
-        {renderLogin()}
+        {renderLogin(console.log(user))}
       </div>
     </>
   );

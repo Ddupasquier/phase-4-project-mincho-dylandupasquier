@@ -34,7 +34,7 @@ function Main() {
       .then((data) => {
         setAllParks(data.parks);
       });
-  }, []);
+  }, [page]);
 
   if (allParks.length === 0) {
     return <h1>Loading...</h1>;

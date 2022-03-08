@@ -1,12 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
+// import { Link } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 
-function Login({ onLogin }) {
+function Login({ onLogin, setErrors }) {
   const [show, setShow] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [isLogin, setIsLogin] = useState();
 
-  function handleSubmit(e) {
+  function ifLogin(e) {
     e.preventDefault();
     fetch("/login", {
       method: "POST",
@@ -17,6 +19,35 @@ function Login({ onLogin }) {
     })
       .then((r) => r.json())
       .then((user) => onLogin(user));
+    setIsLogin(true);
+    // console.log("logged in")
+  }
+
+  function ifSignup(e) {
+    e.preventDefault();
+    const user = {
+      username,
+      password,
+    };
+    fetch("/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    }).then((res) => {
+      if (res.ok) {
+        res.json()
+      } else {
+        res.json().then((e) => setErrors(Object.entries(e.error).flat()));
+      }
+    });
+    setIsLogin(false)
+    // console.log("signed up")
+  }
+
+  function handleSubmit() {
+    isLogin ? ifLogin() : ifSignup()
   }
 
   const handleClose = () => setShow(false);
@@ -37,9 +68,9 @@ function Login({ onLogin }) {
           <h3>Login</h3>
         </Modal.Header>
         <Modal.Body>
-          <form  onSubmit={handleSubmit} className="loginform">
+          <form onSubmit={handleSubmit} className="loginform">
             <p className="medfont">Let's Get Started By Logging In!</p>
-            <p>One day, this may even be password protected ;)</p>
+            <p>One day, this may even be password protecte</p>
             <input
               type="text"
               placeholder="Username"
@@ -54,8 +85,11 @@ function Login({ onLogin }) {
               onChange={(e) => setPassword(e.target.value)}
             ></input>
             <br />
-            <button type="submit" className="button">
+            <button type="submit" className="button" onClick={ifLogin} value="login">
               Login
+            </button>{" "}
+            <button type="submit" className="signupbtn button" onClick={ifSignup} value="signup">
+              Signup
             </button>
           </form>
         </Modal.Body>

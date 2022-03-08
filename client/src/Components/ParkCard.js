@@ -1,5 +1,17 @@
 import React from "react";
-function ParkCard({ park: { images, name, states } }) {
+import { Link } from "react-router-dom";
+// import SelectedPark from "./SelectedPark";
+
+function ParkCard({ park: { images, name, states, id } }) {
+  // const [park, setPark] = useState(null);
+  // const { id } = useParams();
+
+  // useEffect(() => {
+  //   fetch(`.parks/${id}`)
+  //     .then((resp) => resp.json())
+  //     .then((data) => setPark(data));
+  // }, [id]);
+
     const bgImg = {
         
             backgroundImage: `url(${images[0].url})`,
@@ -14,13 +26,14 @@ function ParkCard({ park: { images, name, states } }) {
       className="grid-square"
       style={bgImg}
     >
-      {/* <img src={images[0].url} /> */}
       <div className="parkInfo">
         {name}
         <br />
-        {states}
+        {states}<br />
+        <Link to={`/parks/${id}`}>More info</Link>
       </div>
     </div>
+    
   );
 }
 
