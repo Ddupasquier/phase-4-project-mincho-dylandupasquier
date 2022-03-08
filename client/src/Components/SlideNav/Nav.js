@@ -4,11 +4,6 @@ import { Link } from "react-router-dom";
 
 function Nav() {
   const [user, setUser] = useState(null);
-  
-
-  // fails to create session bc invalid username/password
-  //thus when the below fetch called is performed, session fails bc no session
-  //response.ok should fail...
 
   useEffect(() => {
     fetch("/me").then((response) => {
@@ -29,7 +24,6 @@ function Nav() {
   }
 
   function renderLogin() {
-    console.log(user);
     if (user !== null) {
       return (
         <div className="welcomeCont">
