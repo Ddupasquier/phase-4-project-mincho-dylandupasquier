@@ -32,13 +32,14 @@ function Login({ onLogin }) {
         Login
       </button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} className="modalCont">
         <Modal.Header closeButton>
           <h3>Login</h3>
         </Modal.Header>
         <Modal.Body>
           <form  onSubmit={handleSubmit} className="loginform">
             <p className="medfont">Let's Get Started By Logging In!</p>
+            <p>One day, this may even be password protected ;)</p>
             <input
               type="text"
               placeholder="Username"
