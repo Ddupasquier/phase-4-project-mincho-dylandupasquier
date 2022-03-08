@@ -1,6 +1,9 @@
 To Run Both servers Use:
 foreman start -f Procfile.dev
 
+Postgres start:
+sudo service postgresql start
+
 then open 
 localhost:3000 (back-end)
 and 
