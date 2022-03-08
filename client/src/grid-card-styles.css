@@ -22,12 +22,11 @@
   box-shadow: 1px 1px 7px;
 }
 
-.grid-square:hover {
-  /* border-width: medium; */
+/* .grid-square:hover {
   width: 120%;
   height: 140%;
   z-index: 10;
-}
+} */
 
 .parkInfo {
   word-wrap: break-word;
