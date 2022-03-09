@@ -129,23 +129,47 @@ font-size: .8rem;
 }
 
 .loginmsg {
+  position: absolute;
+  top: 65%;
+  left: 5%;
+  font-size: .8rem;
+}
+
+.loginbtn, .logoutbtn {
+  position: absolute;
+  right: 5%;
+  top: 80%;
+}
+
+.selectedPark {
+  padding: 2%;
+  height: 100%;
+}
+
+.selectedPark > h2 {
+  text-align: center;
+  margin: 0;
+}
+
+.selectedPark > p {
+  text-indent: 30px;
+}
+
+.selectedParkImage {
+  background: white;
   float: left;
+  width: 45%;
+  margin-right: 2%;
+  margin-bottom: 1%;
+  margin-top: 3%;
 }
 
-.loginbtn {
-  position: absolute;
-  right: 5%;
-  top: 80%;
+.selectedParkImage > img {
+ width: 100%;
 }
 
-/* .logoutbtn {
-  margin-left: 1%;
-} */
-
-.welcomeCont {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.349);
-  padding: 1%;
-  right: 5%;
-  top: 80%;
+.selectedParkImage > figcaption {
+  text-align: center;
+  font-size: .5rem;
 }
+
