@@ -19,7 +19,7 @@ class ParksController < ApplicationController
         else
             parks = Park.all
         end
-        render json: {parks: parks, page: page }, include: :images
+        render json: {parks: parks, page: page }, include: [:images, :entrance_fees]
     end
 
     # def create

@@ -11,7 +11,9 @@ function Main({
   sortBy,
   setSearch,
   setSortBy,
-}) {
+}) 
+
+{
   const [page, setPage] = useState(1);
 
   useEffect(() => {

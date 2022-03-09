@@ -1,13 +1,18 @@
-To Run Both servers Use:
-foreman start -f Procfile.dev
+- To Run Both servers Use:
+    foreman start -f Procfile.dev
+- Postgres start:
+    sudo service postgresql start
+- then open 
+    localhost:3000 (back-end)
+    and 
+    localhost:4000 (front-end)
 
-Postgres start:
-sudo service postgresql start
+## Example Logins
+  Passwords for Users:
+  Wonton - wetfoodisbae
+  Dylan Dupasquier - flatironschool
+  manbearpig - yourmom
 
-then open 
-localhost:3000 (back-end)
-and 
-localhost:4000 (front-end)
 
 ## Description
 

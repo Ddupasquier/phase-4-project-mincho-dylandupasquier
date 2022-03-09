@@ -1,26 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Login from "../Login";
 import { Link } from "react-router-dom";
 
-function Nav() {
-  const [user, setUser] = useState(null);
-  
-
-  // fails to create session bc invalid username/password
-  //thus when the below fetch called is performed, session fails bc no session
-  //response.ok should fail...
-
+function Nav({ user, setUser, username, setUsername }) {
   useEffect(() => {
     fetch("/me").then((response) => {
       if (response.ok) {
         response.json().then((user) => setUser(user));
       }
     });
-  }, []);
-
-  function onLogout() {
-    setUser(null);
-  }
+  }, [setUser]);
 
   function handleLogout() {
     fetch("/logout", {
@@ -28,8 +17,12 @@ function Nav() {
     }).then(() => onLogout());
   }
 
+  function onLogout() {
+    setUser(null);
+  }
+
   function renderLogin() {
-    console.log(user);
+    // console.log(user);
     if (user !== null) {
       return (
         <>
@@ -40,7 +33,7 @@ function Nav() {
         </>
       );
     } else {
-      return <Login user={user} onLogin={setUser} />;
+      return <Login user={user} onLogin={setUser} username={username} setUsername={setUsername} />;
     }
   }
 
@@ -53,13 +46,9 @@ function Nav() {
             Parks
           </Link>
           {" | "}
-          <Link to="/activities" className="link">
+          {user !== null ? <Link to={`/my_profile/${user.username}`} className="link">
             My Profile
-          </Link>
-          {" | "}
-          <Link to="/campgrounds" className="link">
-            Campgrounds
-          </Link>
+          </Link> : <span className="disabledMyProfile">My Profile</span>}
         </div>
         {renderLogin()}
       </div>

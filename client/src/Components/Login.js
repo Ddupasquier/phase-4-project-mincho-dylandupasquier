@@ -2,9 +2,8 @@ import React, { useState } from "react";
 // import { Link } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 
-function Login({ onLogin }) {
+function Login({ onLogin, username, setUsername }) {
   const [show, setShow] = useState(false);
-  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLogin, setIsLogin] = useState();
   const [errors, setErrors] = useState([]);
@@ -67,7 +66,7 @@ function Login({ onLogin }) {
         onClick={handleShow}
         className="button loginbtn"
       >
-        Login
+        Login/Signup
       </button>
 
       <Modal show={show} onHide={handleClose} className="modalCont">
