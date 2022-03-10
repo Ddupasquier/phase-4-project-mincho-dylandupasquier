@@ -130,7 +130,7 @@ font-size: .8rem;
 
 .loginmsg {
   position: absolute;
-  top: 65%;
+  top: 68%;
   left: 5%;
   font-size: .8rem;
 }
@@ -142,9 +142,14 @@ font-size: .8rem;
 }
 
 .selectedPark {
+  background: rgb(179, 194, 177);
+  border-radius: 5px;
+  box-shadow: 5px 2px 28px;
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
   padding: 2%;
-  height: 60vh;
-  overflow: auto;
+  max-width: 80vh;
 }
 
 .selectedPark > h2 {
@@ -181,13 +186,20 @@ font-size: .8rem;
 }
 
 .myProfile {
+  background: rgb(179, 194, 177);
+  border-radius: 5px;
+  box-shadow: 5px 2px 28px;
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
   padding: 2%;
-  height: 50vh;
+  height: 34vh;
+  max-width: 65vh;
 }
 
 .userImage {
   float: left;
-  height: 30vh;
+  height: 100%;
   margin-right: 2%;
 }
 
@@ -199,4 +211,21 @@ font-size: .8rem;
   /* text-align: center; */
   margin: 6%;
   margin-left: 50%;
+}
+
+.userpatchform {
+  margin: auto;
+  text-align: center;
+  /* padding: 1vh; */
+  padding: 3rem;
+  width:100%;
+  height: 95%;
+  background: rgb(196, 197, 150);
+  /* border: solid 7px rgba(0, 0, 0, 0.336); */
+  border-radius: 5px;
+  /* box-shadow: 5px 2px 28px; */
+}
+
+.userpatchform > input {
+  margin: .1rem;
 }
