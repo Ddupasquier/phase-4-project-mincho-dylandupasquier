@@ -2,7 +2,9 @@ import React, { useEffect } from "react";
 import Login from "../Login";
 import { Link } from "react-router-dom";
 
-function Nav({ user, setUser, username, setUsername }) {
+function Nav() {
+  const [user, setUser] = useState(null);
+
   useEffect(() => {
     fetch("/me").then((response) => {
       if (response.ok) {
@@ -22,7 +24,6 @@ function Nav({ user, setUser, username, setUsername }) {
   }
 
   function renderLogin() {
-    // console.log(user);
     if (user !== null) {
       return (
         <>
