@@ -4,25 +4,25 @@ import Modal from "react-bootstrap/Modal";
 // bring in user, apply to state defaults
 function MyProfile({ user, setUser, username, setUsername }) {
   const [show, setShow] = useState(false);
-  const [image, setImg] = useState(user.image);
-  const [city, setCity] = useState(user.city);
-  const [state, setState] = useState(user.state);
-  const [email, setEmail] = useState(user.email);
-  const [phone, setPhone] = useState(user.phone);
+  const [image, setImg] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   function handleSubmit(e) {
-    e.preventDefault();
+    // e.preventDefault();
     fetch(`/users/${user.id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, city, state, image, email, phone }),
-    }).then((res) => res.json());
-    // .then((updatedUser) => {
-
-    // });
+    }).then((res) => res.json())
+      .then((updatedUser) => {
+        console.log(updatedUser)
+    });
   }
 
   return (
