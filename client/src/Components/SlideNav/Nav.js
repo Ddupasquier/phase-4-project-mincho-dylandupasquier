@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import Login from "../Login";
 import { Link } from "react-router-dom";
@@ -22,7 +23,6 @@ function Nav({ user, setUser, username, setUsername }) {
   }
 
   function renderLogin() {
-    // console.log(user);
     if (user !== null) {
       return (
         <>
