@@ -143,19 +143,20 @@ footer {
 }
 
 .selectedPark {
+  /* display: flex; */
   background: rgb(179, 194, 177);
   border-radius: 5px;
   box-shadow: 5px 2px 28px;
   margin: auto;
   margin-top: 2%;
   margin-bottom: 2%;
-  height: 80vh;
-  width: 150vh;
+  height: fit-content;
+  width: 90%;
   text-align: justify;
   overflow: auto;
 }
 
-.selectedPark > strong {
+.selectedPark > h5 {
   text-align: center;
   margin: 0;
 }
@@ -167,8 +168,9 @@ footer {
 
 .selectedParkImage {
   float: left;
-  height: 50%;
+  height: 30vh;
   margin-right: 2%;
+  margin-bottom: 2%;
 }
 
 .selectedParkImage > img {
