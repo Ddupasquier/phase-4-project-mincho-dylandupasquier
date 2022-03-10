@@ -149,10 +149,11 @@ font-size: .8rem;
   margin-top: 2%;
   margin-bottom: 2%;
   padding: 2%;
-  max-width: 80vh;
+  max-width: 100vh;
+  text-align: justify;
 }
 
-.selectedPark > h2 {
+.selectedPark > h3 {
   text-align: center;
   margin: 0;
 }
@@ -166,8 +167,8 @@ font-size: .8rem;
   background: white;
   float: left;
   height: 35vh;
-  margin-right: 2%;
-  margin-bottom: 1%;
+  margin-right: 2.5%;
+  margin-bottom: 2%;
   margin-top: 3%;
 }
 
@@ -176,6 +177,7 @@ font-size: .8rem;
 }
 
 .selectedParkImage > figcaption {
+  background: white;
   text-align: center;
   font-size: .5rem;
 }
@@ -193,8 +195,9 @@ font-size: .8rem;
   margin-top: 2%;
   margin-bottom: 2%;
   padding: 2%;
-  height: 34vh;
-  max-width: 65vh;
+  height: 50vh;
+  max-width: 60%;
+  /* text-align: justify; */
 }
 
 .userImage {

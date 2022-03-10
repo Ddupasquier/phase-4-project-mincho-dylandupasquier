@@ -26,11 +26,11 @@ function SelectedPark() {
       <div className="selectedParkImage"><img src={thisPark.images[0].url} title={thisPark.images[0].title} alt={thisPark.images[0].altText} />
       <figcaption>{thisPark.images[0].caption}</figcaption></div>
       <br />
-      <h2>{thisPark.name}</h2>
+      <h3>{thisPark.name}</h3>
       <br />
       <p>{thisPark.description}</p>
       X: {thisPark.longitude}, Y: {thisPark.latitude}<br />
-      <strong>Weather:</strong> {thisPark.weatherInfo}
+      <b>Weather:</b>{thisPark.weatherInfo}
     </div>
   );
 }
