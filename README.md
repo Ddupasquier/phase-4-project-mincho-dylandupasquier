@@ -7,9 +7,9 @@
     and 
     localhost:4000 (front-end)
 
-    Run production:
+- Run production:
     npm run heroku-postbuild (only if front end changes)
-    git push herkou main after main commit
+    git push herkou main (after main commit)
 
 ## Example Logins
   Passwords for Users:
