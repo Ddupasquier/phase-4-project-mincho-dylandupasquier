@@ -4,17 +4,17 @@ import Modal from "react-bootstrap/Modal";
 // bring in user, apply to state defaults
 function MyProfile({ user, setUser, username, setUsername }) {
   const [show, setShow] = useState(false);
-  const [image, setImg] = useState("");
-  const [city, setCity] = useState("");
-  const [state, setState] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+  const [image, setImg] = useState(user.image);
+  const [city, setCity] = useState(user.city);
+  const [state, setState] = useState(user.state);
+  const [email, setEmail] = useState(user.email);
+  const [phone, setPhone] = useState(user.phone);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   function handleSubmit(e) {
-    // e.preventDefault();
+    e.preventDefault();
     fetch(`/api/users/${user.id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
@@ -58,42 +58,42 @@ function MyProfile({ user, setUser, username, setUsername }) {
               type="text"
               placeholder="Username"
               value={username}
-              onChange={(e) => {if (e.target.value !== "") setUsername(e.target.value)}}
+              onChange={(e) => setUsername(e.target.value)}
             ></input>
             <br />
             <input
               type="text"
               placeholder="Image URL"
               value={image}
-              onChange={(e) => {if (e.target.value !== "") setImg(e.target.value)}}
+              onChange={(e) => setImg(e.target.value)}
             ></input>
             <br />
             <input
               type="text"
               placeholder="City"
               value={city}
-              onChange={(e) => {if (e.target.value !== "") setCity(e.target.value)}}
+              onChange={(e) => setCity(e.target.value)}
             ></input>
             <br />
             <input
               type="text"
               placeholder="State"
               value={state}
-              onChange={(e) => {if (e.target.value !== "")setState(e.target.value)}}
+              onChange={(e) => setState(e.target.value)}
             ></input>
             <br />
             <input
               type="text"
               placeholder="Email"
               value={email}
-              onChange={(e) => {if (e.target.value !== "")setEmail(e.target.value)}}
+              onChange={(e) => setEmail(e.target.value)}
             ></input>
             <br />
             <input
               type="text"
               placeholder="Phone"
               value={phone}
-              onChange={(e) => {if (e.target.value !== "")setPhone(e.target.value)}}
+              onChange={(e) => setPhone(e.target.value)}
             ></input>
             <br />
             <button type="submit" className="button">
