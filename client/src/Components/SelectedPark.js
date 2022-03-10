@@ -8,7 +8,7 @@ function SelectedPark() {
   //   const whatever = window.location.href;
 
   useEffect(() => {
-    fetch(`/parks/${id}`)
+    fetch(`/api/parks/${id}`)
       .then((res) => res.json())
       .then((onePark) => {
         setThisPark(onePark);
@@ -16,21 +16,29 @@ function SelectedPark() {
   }, [id]);
 
   if (thisPark.length === 0) {
-      return <Loading />
+    return <Loading />;
   }
 
   console.log(thisPark);
 
   return (
     <div className="selectedPark">
-      <div className="selectedParkImage"><img src={thisPark.images[0].url} title={thisPark.images[0].title} alt={thisPark.images[0].altText} />
-      <figcaption>{thisPark.images[0].caption}</figcaption></div>
+      <div className="selectedParkImage">
+        <img
+          src={thisPark.images[0].url}
+          title={thisPark.images[0].title}
+          alt={thisPark.images[0].altText}
+        />
+        <figcaption>{thisPark.images[0].caption}</figcaption>
+      </div>
       <br />
       <h3>{thisPark.name}</h3>
       <br />
       <p>{thisPark.description}</p>
-      X: {thisPark.longitude}, Y: {thisPark.latitude}<br />
-      <b>Weather:</b>{thisPark.weatherInfo}
+      X: {thisPark.longitude}, Y: {thisPark.latitude}
+      <br />
+      <b>Weather:</b>
+      {thisPark.weatherInfo}
     </div>
   );
 }

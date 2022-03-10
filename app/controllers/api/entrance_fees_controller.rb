@@ -1,4 +1,4 @@
-class EntranceFeesController < ApplicationController
+class Api::EntranceFeesController < ApplicationController
     before_action :find_ent_fee, only: [:show]
 
     def show

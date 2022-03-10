@@ -7,6 +7,9 @@
     and 
     localhost:4000 (front-end)
 
+    Run production:
+    npm run heroku-postbuild (only if front end changes)
+
 ## Example Logins
   Passwords for Users:
   Wonton - wetfoodisbae

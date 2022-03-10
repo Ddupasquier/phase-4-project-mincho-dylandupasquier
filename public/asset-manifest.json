@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.068933fa.chunk.css",
+    "main.js": "/static/js/main.bc09a0f1.chunk.js",
+    "main.js.map": "/static/js/main.bc09a0f1.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.1e93c0c1.js",
+    "runtime-main.js.map": "/static/js/runtime-main.1e93c0c1.js.map",
+    "static/css/2.b57b7cfd.chunk.css": "/static/css/2.b57b7cfd.chunk.css",
+    "static/js/2.4b880741.chunk.js": "/static/js/2.4b880741.chunk.js",
+    "static/js/2.4b880741.chunk.js.map": "/static/js/2.4b880741.chunk.js.map",
+    "static/js/3.a5f8db0d.chunk.js": "/static/js/3.a5f8db0d.chunk.js",
+    "static/js/3.a5f8db0d.chunk.js.map": "/static/js/3.a5f8db0d.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.b57b7cfd.chunk.css.map": "/static/css/2.b57b7cfd.chunk.css.map",
+    "static/css/main.068933fa.chunk.css.map": "/static/css/main.068933fa.chunk.css.map",
+    "static/js/2.4b880741.chunk.js.LICENSE.txt": "/static/js/2.4b880741.chunk.js.LICENSE.txt",
+    "static/media/GRp433jw6BKfCyL86nk8jc-970-80.jpg.04c78e56.webp": "/static/media/GRp433jw6BKfCyL86nk8jc-970-80.jpg.04c78e56.webp",
+    "static/media/ZiVxAfNzdnvjEigJuKXxJW-970-80.jpg.e4ea8440.webp": "/static/media/ZiVxAfNzdnvjEigJuKXxJW-970-80.jpg.e4ea8440.webp",
+    "static/media/geyser-yelowstone-burst_h.82300c11.png": "/static/media/geyser-yelowstone-burst_h.82300c11.png",
+    "static/media/hiker-in-north-window-arch-royalty-free-image-1588786762.c1b81f5c.jpg": "/static/media/hiker-in-north-window-arch-royalty-free-image-1588786762.c1b81f5c.jpg",
+    "static/media/ku5EqMv2ZWTQJvMb3XCmeb-970-80.jpg.bc244938.webp": "/static/media/ku5EqMv2ZWTQJvMb3XCmeb-970-80.jpg.bc244938.webp",
+    "static/media/national_parks_sustainability_feature.56d446a8.jpg": "/static/media/national_parks_sustainability_feature.56d446a8.jpg",
+    "static/media/poAYm6mb5ay4TBSYuMAWs4-970-80.jpg.11981fc6.webp": "/static/media/poAYm6mb5ay4TBSYuMAWs4-970-80.jpg.11981fc6.webp",
+    "static/media/ukUkjVfuPhJadUKzSS4Kmm-970-80.jpg.9134c703.webp": "/static/media/ukUkjVfuPhJadUKzSS4Kmm-970-80.jpg.9134c703.webp"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1e93c0c1.js",
+    "static/css/2.b57b7cfd.chunk.css",
+    "static/js/2.4b880741.chunk.js",
+    "static/css/main.068933fa.chunk.css",
+    "static/js/main.bc09a0f1.chunk.js"
+  ]
+}

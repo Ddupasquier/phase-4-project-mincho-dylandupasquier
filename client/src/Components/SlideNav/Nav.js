@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Nav({ user, setUser, username, setUsername }) {
   useEffect(() => {
-    fetch("/me").then((response) => {
+    fetch("/api/me").then((response) => {
       if (response.ok) {
         response.json().then((user) => setUser(user));
       }
@@ -12,7 +12,7 @@ function Nav({ user, setUser, username, setUsername }) {
   }, [setUser]);
 
   function handleLogout() {
-    fetch("/logout", {
+    fetch("/api/logout", {
       method: "DELETE",
     }).then(() => onLogout());
   }
@@ -33,7 +33,14 @@ function Nav({ user, setUser, username, setUsername }) {
         </>
       );
     } else {
-      return <Login user={user} onLogin={setUser} username={username} setUsername={setUsername} />;
+      return (
+        <Login
+          user={user}
+          onLogin={setUser}
+          username={username}
+          setUsername={setUsername}
+        />
+      );
     }
   }
 
@@ -46,9 +53,13 @@ function Nav({ user, setUser, username, setUsername }) {
             Parks
           </Link>
           {" | "}
-          {user !== null ? <Link to={`/my_profile/${user.username}`} className="link">
-            My Profile
-          </Link> : <span className="disabledMyProfile">My Profile</span>}
+          {user !== null ? (
+            <Link to={`/my_profile/${user.username}`} className="link">
+              My Profile
+            </Link>
+          ) : (
+            <span className="disabledMyProfile">My Profile</span>
+          )}
         </div>
         {renderLogin()}
       </div>

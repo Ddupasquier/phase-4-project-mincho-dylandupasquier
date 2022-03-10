@@ -1,4 +1,4 @@
-@import '~mdb-ui-kit/css/mdb.min.css';
+/* @import '~mdb-ui-kit/css/mdb.min.css'; */
 
 body,
 html {
@@ -31,7 +31,7 @@ footer {
   /* height: 50px; */
   text-align: right;
   background: rgba(255, 255, 255, 0.253);
-  font-size: .5rem;
+  font-size: 0.5rem;
   padding-right: 1rem;
 }
 
@@ -78,13 +78,13 @@ footer {
 .sortsearch {
   text-align: right;
   padding: 3px;
-  margin-right: .2rem;
+  margin-right: 0.2rem;
   color: black;
   z-index: -10;
 }
 
 .searchinp {
-  font-size: .8rem;
+  font-size: 0.8rem;
   height: 25px;
   position: relative;
   top: 0px;
@@ -92,8 +92,8 @@ footer {
 }
 
 .searchdrop {
-height: 25px;
-font-size: .8rem;
+  height: 25px;
+  font-size: 0.8rem;
 }
 
 .tocenter {
@@ -116,7 +116,7 @@ font-size: .8rem;
   text-align: center;
   /* padding: 1vh; */
   padding: 3rem;
-  width:100%;
+  width: 100%;
   height: 95%;
   background: rgb(196, 197, 150);
   /* border: solid 7px rgba(0, 0, 0, 0.336); */
@@ -125,17 +125,18 @@ font-size: .8rem;
 }
 
 .loginform > input {
-  margin: .1rem;
+  margin: 0.1rem;
 }
 
 .loginmsg {
   position: absolute;
   top: 68%;
   left: 5%;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
-.loginbtn, .logoutbtn {
+.loginbtn,
+.logoutbtn {
   position: absolute;
   right: 5%;
   top: 80%;
@@ -173,13 +174,13 @@ font-size: .8rem;
 }
 
 .selectedParkImage > img {
- height: 100%;
+  height: 100%;
 }
 
 .selectedParkImage > figcaption {
   background: white;
   text-align: center;
-  font-size: .5rem;
+  font-size: 0.5rem;
 }
 
 .disabledMyProfile {
@@ -221,7 +222,7 @@ font-size: .8rem;
   text-align: center;
   /* padding: 1vh; */
   padding: 3rem;
-  width:100%;
+  width: 100%;
   height: 95%;
   background: rgb(196, 197, 150);
   /* border: solid 7px rgba(0, 0, 0, 0.336); */
@@ -230,5 +231,5 @@ font-size: .8rem;
 }
 
 .userpatchform > input {
-  margin: .1rem;
+  margin: 0.1rem;
 }
