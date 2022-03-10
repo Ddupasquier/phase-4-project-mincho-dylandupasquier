@@ -57,7 +57,7 @@ function MyProfile({ user, setUser, username, setUsername }) {
             <input
               type="text"
               placeholder="Username"
-              value={username}
+              value={user.username}
               onChange={(e) => setUsername(e.target.value)}
             ></input>
             <br />
