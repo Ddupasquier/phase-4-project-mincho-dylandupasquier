@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Loading from "./Loading";
 
 function SelectedPark() {
   const [thisPark, setThisPark] = useState("");
@@ -15,7 +16,7 @@ function SelectedPark() {
   }, [id]);
 
   if (thisPark.length === 0) {
-      return <h1>Loading...</h1>
+      return <Loading />
   }
 
   console.log(thisPark);

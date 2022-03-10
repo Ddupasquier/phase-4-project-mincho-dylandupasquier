@@ -193,3 +193,9 @@ font-size: .8rem;
 .userImage > img {
   height: 100%;
 }
+
+.toCenter {
+  /* text-align: center; */
+  margin: 6%;
+  margin-left: 50%;
+}

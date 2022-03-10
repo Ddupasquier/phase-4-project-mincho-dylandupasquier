@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SortSearch from "./SortSearch";
+import Loading from "./Loading";
 import "../grid-card-styles.css";
 // import ParkCard from "./ParkCard";
 
@@ -25,7 +26,7 @@ function Main({
   }, [page, setAllParks]);
 
   if (allParks.length === 0) {
-    return <h1>Loading...</h1>;
+    return <Loading />;
   }
 
   function incPage() {
