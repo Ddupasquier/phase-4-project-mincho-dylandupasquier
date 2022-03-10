@@ -1,10 +1,9 @@
+
 import React, { useEffect } from "react";
 import Login from "../Login";
 import { Link } from "react-router-dom";
 
-function Nav() {
-  const [user, setUser] = useState(null);
-
+function Nav({ user, setUser, username, setUsername }) {
   useEffect(() => {
     fetch("/me").then((response) => {
       if (response.ok) {
