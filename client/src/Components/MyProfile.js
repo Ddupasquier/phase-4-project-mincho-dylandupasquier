@@ -42,7 +42,7 @@ function MyProfile({ user, setUser, username, setUsername }) {
         <br />
         Email: {user.email}
         <br />
-        <button variant="primary" onClick={handleShow} className="button">
+        <button onClick={handleShow} className="button">
           Edit
         </button>
       </div>
