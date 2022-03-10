@@ -1,4 +1,4 @@
-class ParksController < ApplicationController
+class Api::ParksController < ApplicationController
 
     rescue_from ActiveRecord::RecordInvalid, with: :invalid_park
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response  

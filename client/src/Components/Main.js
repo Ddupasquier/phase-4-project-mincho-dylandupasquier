@@ -18,7 +18,7 @@ function Main({
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    fetch(`/parks?limit=20&page=${page}`)
+    fetch(`/api/parks?limit=20&page=${page}`)
       .then((res) => res.json())
       .then((data) => {
         setAllParks(data.parks);

@@ -10,7 +10,7 @@ function Login({ onLogin, username, setUsername }) {
 
   function ifLogin(e) {
     e.preventDefault();
-    fetch("/login", {
+    fetch("/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35,7 +35,7 @@ function Login({ onLogin, username, setUsername }) {
       username,
       password,
     };
-    fetch("/users", {
+    fetch("/api/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

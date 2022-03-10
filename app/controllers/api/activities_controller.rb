@@ -1,4 +1,4 @@
-class ActivitiesController < ApplicationController
+class Api::ActivitiesController < ApplicationController
     before_action :find_activity, only: [:show]
 
     def show

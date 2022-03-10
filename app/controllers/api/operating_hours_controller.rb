@@ -1,4 +1,4 @@
-class OperatingHoursController < ApplicationController
+class Api::OperatingHoursController < ApplicationController
     before_action :find_op_hours, only: [:show]
 
     def show
