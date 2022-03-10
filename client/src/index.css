@@ -189,21 +189,22 @@ footer {
 }
 
 .myProfile {
+  display: flex;
   background: rgb(179, 194, 177);
   border-radius: 5px;
   box-shadow: 5px 2px 28px;
   margin: auto;
   margin-top: 2%;
   margin-bottom: 2%;
-  padding: 2%;
-  height: 50vh;
+  padding: 1%;
+  /* height: 40vh; */
   max-width: 60%;
   /* text-align: justify; */
 }
 
 .userImage {
   float: left;
-  height: 100%;
+  height: 40vh;
   margin-right: 2%;
 }
 
