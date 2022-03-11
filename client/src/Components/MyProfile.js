@@ -4,14 +4,13 @@ import Modal from "react-bootstrap/Modal";
 // bring in user, apply to state defaults
 function MyProfile({ user, setUser, username, setUsername }) {
   const [show, setShow] = useState(false);
-  const [image, setImg] = useState(user.image);
-  const [city, setCity] = useState(user.city);
-  const [state, setState] = useState(user.state);
-  const [email, setEmail] = useState(user.email);
-  const [phone, setPhone] = useState(user.phone);
+  const [image, setImg] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState();
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+function MyProfile() {
 
   function handleSubmit(e) {
     // e.preventDefault();
@@ -19,10 +18,10 @@ function MyProfile({ user, setUser, username, setUsername }) {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, city, state, image, email, phone }),
-    }).then((res) => res.json());
-    // .then((updatedUser) => {
-
-    // });
+    }).then((res) => res.json())
+      .then((updatedUser) => {
+        console.log(updatedUser)
+    });
   }
 
   return (
@@ -48,62 +47,6 @@ function MyProfile({ user, setUser, username, setUsername }) {
       </div>
       {/*  */}
 
-      <Modal show={show} onHide={handleClose} className="">
-        <Modal.Header closeButton>
-          <h3>Edit Profile</h3>
-        </Modal.Header>
-        <Modal.Body>
-          <form onSubmit={handleSubmit} className="userpatchform">
-            <input
-              type="text"
-              placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            ></input>
-            <br />
-            <input
-              type="text"
-              placeholder="Image URL"
-              value={image}
-              onChange={(e) => setImg(e.target.value)}
-            ></input>
-            <br />
-            <input
-              type="text"
-              placeholder="City"
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-            ></input>
-            <br />
-            <input
-              type="text"
-              placeholder="State"
-              value={state}
-              onChange={(e) => setState(e.target.value)}
-            ></input>
-            <br />
-            <input
-              type="text"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            ></input>
-            <br />
-            <input
-              type="text"
-              placeholder="Phone"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-            ></input>
-            <br />
-            <button type="submit" className="button">
-              All Done!
-            </button>
-          </form>
-        </Modal.Body>
-      </Modal>
-    </>
-  );
 }
 
 export default MyProfile;
