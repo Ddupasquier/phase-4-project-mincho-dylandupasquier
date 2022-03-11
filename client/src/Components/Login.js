@@ -75,7 +75,6 @@ function Login({ user, onLogin, username, setUsername }) {
         <Modal.Body>
           <form onSubmit={handleSubmit} className="loginform">
             <p className="medfont">Let's Get Started By Logging In!</p>
-            <p>One day, this may even be password protecte</p>
             <input
               type="text"
               placeholder="Username"
