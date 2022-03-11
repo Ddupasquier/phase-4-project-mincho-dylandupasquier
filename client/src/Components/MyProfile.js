@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
-// import { useParams } from "react-router-dom";
-// bring in user, apply to state defaults
-function MyProfile({ user, setUser, username, setUsername }) {
+function MyProfile({ user, username, setUsername }) {
   const [show, setShow] = useState(false);
   const [image, setImg] = useState(user.image);
   const [city, setCity] = useState(user.city);
@@ -10,7 +8,10 @@ function MyProfile({ user, setUser, username, setUsername }) {
   const [email, setEmail] = useState(user.email);
   const [phone, setPhone] = useState(user.phone);
 
-  const handleClose = () => setShow(false);
+  const handleClose = () => {
+    window.location.reload(false)
+    setShow(false);
+  };
   const handleShow = () => setShow(true);
 
   function handleSubmit(e) {
@@ -20,23 +21,15 @@ function MyProfile({ user, setUser, username, setUsername }) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, city, state, image, email, phone }),
     }).then((res) => res.json());
-    // .then((updatedUser) => {
 
-    // });
   }
 
-  // function imageOrPlaceholder() {
-  //   user.image !== null ? <img src={user.image} alt={user.username} /> : <img src="https://heuft.com/upload/image/400x267/no_image_placeholder.png" />
-  // }
   console.log(user.image);
 
   return (
     <>
-      {/* Return User Info */}
       <div className="myProfile">
         <div className="userImage">
-          {/* {imageOrPlaceholder()} */}
-          {/* <img src={user.image} alt={user.username} /> */}
           {user.image !== null ? (
             <img src={user.image} alt={user.username} />
           ) : (
@@ -60,7 +53,7 @@ function MyProfile({ user, setUser, username, setUsername }) {
           Edit
         </button>
       </div>
-      {/*  */}
+
 
       <Modal show={show} onHide={handleClose} className="">
         <Modal.Header closeButton>
@@ -110,7 +103,7 @@ function MyProfile({ user, setUser, username, setUsername }) {
               onChange={(e) => setPhone(e.target.value)}
             ></input>
             <br />
-            <button type="submit" className="button">
+            <button type="submit" className="button" onClick={handleClose}>
               All Done!
             </button>
           </form>

@@ -8,6 +8,10 @@ function Login({ onLogin, username, setUsername }) {
   const [isLogin, setIsLogin] = useState();
   const [errors, setErrors] = useState([]);
 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+
   function ifLogin(e) {
     e.preventDefault();
     fetch("/api/login", {
@@ -26,7 +30,7 @@ function Login({ onLogin, username, setUsername }) {
         }
       });
     setIsLogin(true);
-    // console.log("logged in")
+    handleClose()
   }
 
   function ifSignup(e) {
@@ -49,16 +53,14 @@ function Login({ onLogin, username, setUsername }) {
       }
     });
     setIsLogin(false);
-    // console.log("signed up")
+
   }
 
   function handleSubmit() {
     isLogin ? ifLogin() : ifSignup();
   }
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
+ 
   return (
     <>
       <button
@@ -99,14 +101,14 @@ function Login({ onLogin, username, setUsername }) {
             >
               Login
             </button>{" "}
-            <button
+            {isLogin === false ? null : <button
               type="submit"
               className="signupbtn button"
               onClick={ifSignup}
               value="signup"
             >
               Signup
-            </button>
+            </button>}
           </form>
         </Modal.Body>
       </Modal>
