@@ -9,10 +9,13 @@ function MyProfile({ user, username, setUsername }) {
   const [phone, setPhone] = useState(user.phone);
 
   const handleClose = () => {
-    window.location.reload(false)
+    window.location.reload(false);
     setShow(false);
   };
-  const handleShow = () => setShow(true);
+  const handleShow = () => {
+    setUsername(user.username);
+    setShow(true);
+  };
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -21,7 +24,6 @@ function MyProfile({ user, username, setUsername }) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, city, state, image, email, phone }),
     }).then((res) => res.json());
-
   }
 
   console.log(user.image);
@@ -53,7 +55,6 @@ function MyProfile({ user, username, setUsername }) {
           Edit
         </button>
       </div>
-
 
       <Modal show={show} onHide={handleClose} className="">
         <Modal.Header closeButton>

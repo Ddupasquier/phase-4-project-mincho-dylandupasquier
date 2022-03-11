@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // import { Link } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 
-function Login({ onLogin, username, setUsername }) {
+function Login({ user, onLogin, username, setUsername }) {
   const [show, setShow] = useState(false);
   const [password, setPassword] = useState("");
   const [isLogin, setIsLogin] = useState();
@@ -10,7 +10,6 @@ function Login({ onLogin, username, setUsername }) {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
 
   function ifLogin(e) {
     e.preventDefault();
@@ -30,7 +29,7 @@ function Login({ onLogin, username, setUsername }) {
         }
       });
     setIsLogin(true);
-    handleClose()
+    handleClose();
   }
 
   function ifSignup(e) {
@@ -53,14 +52,12 @@ function Login({ onLogin, username, setUsername }) {
       }
     });
     setIsLogin(false);
-
   }
 
   function handleSubmit() {
     isLogin ? ifLogin() : ifSignup();
   }
 
- 
   return (
     <>
       <button
@@ -101,14 +98,16 @@ function Login({ onLogin, username, setUsername }) {
             >
               Login
             </button>{" "}
-            {isLogin === false ? null : <button
-              type="submit"
-              className="signupbtn button"
-              onClick={ifSignup}
-              value="signup"
-            >
-              Signup
-            </button>}
+            {isLogin === false ? null : (
+              <button
+                type="submit"
+                className="signupbtn button"
+                onClick={ifSignup}
+                value="signup"
+              >
+                Signup
+              </button>
+            )}
           </form>
         </Modal.Body>
       </Modal>

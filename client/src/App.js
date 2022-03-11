@@ -14,7 +14,7 @@ function App() {
   const [sortBy, setSortBy] = useState("name");
   const [allParks, setAllParks] = useState([]);
   const [search, setSearch] = useState("");
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState('');
   const [user, setUser] = useState(null);
   const sortedParks = [...allParks].sort(compare);
   // const { name } = useParams()
