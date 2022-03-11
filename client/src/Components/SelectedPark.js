@@ -32,13 +32,12 @@ function SelectedPark() {
         <figcaption>{thisPark.images[0].caption}</figcaption>
       </div>
       <br />
-      <h3>{thisPark.name}</h3>
-      <br />
+      <h5>{thisPark.name}</h5>
       <p>{thisPark.description}</p>
-      X: {thisPark.longitude}, Y: {thisPark.latitude}
-      <br />
-      <b>Weather:</b>
-      {thisPark.weatherInfo}
+      X: {thisPark.longitude}, Y: {thisPark.latitude}<br /><br />
+      <b>Weather: </b>
+      {" "}{thisPark.weatherInfo}<br />
+      {/* Entry Fees: {thisPark.entrance_fees} */}
     </div>
   );
 }

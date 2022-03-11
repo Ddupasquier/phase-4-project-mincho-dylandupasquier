@@ -143,34 +143,34 @@ footer {
 }
 
 .selectedPark {
+  /* display: flex; */
   background: rgb(179, 194, 177);
   border-radius: 5px;
   box-shadow: 5px 2px 28px;
   margin: auto;
   margin-top: 2%;
   margin-bottom: 2%;
-  padding: 2%;
-  max-width: 100vh;
+  height: fit-content;
+  width: 90%;
   text-align: justify;
+  overflow: auto;
 }
 
-.selectedPark > h3 {
+.selectedPark > h5 {
   text-align: center;
   margin: 0;
 }
 
 .selectedPark > p {
   text-indent: 30px;
+  margin: 3%;
 }
 
 .selectedParkImage {
-  /* border: 2px red solid; */
-  background: white;
   float: left;
-  height: 35vh;
-  margin-right: 2.5%;
+  height: 30vh;
+  margin-right: 2%;
   margin-bottom: 2%;
-  margin-top: 3%;
 }
 
 .selectedParkImage > img {
@@ -189,22 +189,22 @@ footer {
 }
 
 .myProfile {
-  display: flex;
+  /* display: flex; */
   background: rgb(179, 194, 177);
   border-radius: 5px;
   box-shadow: 5px 2px 28px;
   margin: auto;
   margin-top: 2%;
   margin-bottom: 2%;
-  padding: 1%;
-  /* height: 40vh; */
-  max-width: 60%;
-  /* text-align: justify; */
+  height: 40vh;
+  width: 90vh;
+  /* min-width: 70vh; */
+  /* max-width: 110vh; */
 }
 
 .userImage {
   float: left;
-  height: 40vh;
+  height: 100%;
   margin-right: 2%;
 }
 
@@ -213,7 +213,6 @@ footer {
 }
 
 .toCenter {
-  /* text-align: center; */
   margin: 6%;
   margin-left: 50%;
 }

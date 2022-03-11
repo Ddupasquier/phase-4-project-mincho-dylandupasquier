@@ -2,11 +2,14 @@ import React, { useState } from "react";
 // import { Link } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 
-function Login({ onLogin, username, setUsername }) {
+function Login({ user, onLogin, username, setUsername }) {
   const [show, setShow] = useState(false);
   const [password, setPassword] = useState("");
   const [isLogin, setIsLogin] = useState();
   const [errors, setErrors] = useState([]);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   function ifLogin(e) {
     e.preventDefault();
@@ -26,7 +29,7 @@ function Login({ onLogin, username, setUsername }) {
         }
       });
     setIsLogin(true);
-    // console.log("logged in")
+    handleClose();
   }
 
   function ifSignup(e) {
@@ -49,15 +52,11 @@ function Login({ onLogin, username, setUsername }) {
       }
     });
     setIsLogin(false);
-    // console.log("signed up")
   }
 
   function handleSubmit() {
     isLogin ? ifLogin() : ifSignup();
   }
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   return (
     <>
@@ -76,7 +75,6 @@ function Login({ onLogin, username, setUsername }) {
         <Modal.Body>
           <form onSubmit={handleSubmit} className="loginform">
             <p className="medfont">Let's Get Started By Logging In!</p>
-            <p>One day, this may even be password protecte</p>
             <input
               type="text"
               placeholder="Username"
@@ -99,14 +97,16 @@ function Login({ onLogin, username, setUsername }) {
             >
               Login
             </button>{" "}
-            <button
-              type="submit"
-              className="signupbtn button"
-              onClick={ifSignup}
-              value="signup"
-            >
-              Signup
-            </button>
+            {isLogin === false ? null : (
+              <button
+                type="submit"
+                className="signupbtn button"
+                onClick={ifSignup}
+                value="signup"
+              >
+                Signup
+              </button>
+            )}
           </form>
         </Modal.Body>
       </Modal>
