@@ -23,14 +23,7 @@ function MyProfile({ user, username, setUsername }) {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, city, state, image, email, phone }),
-<<<<<<< HEAD
-    }).then((res) => res.json())
-      .then((updatedUser) => {
-        console.log(updatedUser)
-    });
-=======
     }).then((res) => res.json());
->>>>>>> main
   }
 
   console.log(user.image);
@@ -63,8 +56,6 @@ function MyProfile({ user, username, setUsername }) {
         </button>
       </div>
 
-<<<<<<< HEAD
-=======
       <Modal show={show} onHide={handleClose} className="">
         <Modal.Header closeButton>
           <h3>Edit Profile</h3>
@@ -121,7 +112,6 @@ function MyProfile({ user, username, setUsername }) {
       </Modal>
     </>
   );
->>>>>>> main
 }
 
 export default MyProfile;
