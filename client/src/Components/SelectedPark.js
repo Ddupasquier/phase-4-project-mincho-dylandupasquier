@@ -34,9 +34,10 @@ function SelectedPark() {
       <br />
       <h5>{thisPark.name}</h5>
       <p>{thisPark.description}</p>
-      <p>X: {thisPark.longitude}, Y: {thisPark.latitude}<br /><br />
-      <b>Weather:</b>
-      {thisPark.weatherInfo}</p>
+      X: {thisPark.longitude}, Y: {thisPark.latitude}<br /><br />
+      <b>Weather: </b>
+      {" "}{thisPark.weatherInfo}<br />
+      {/* Entry Fees: {thisPark.entrance_fees} */}
     </div>
   );
 }

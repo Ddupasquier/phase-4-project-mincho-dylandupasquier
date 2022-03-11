@@ -28,7 +28,7 @@ function MyProfile({ user, setUser, username, setUsername }) {
   // function imageOrPlaceholder() {
   //   user.image !== null ? <img src={user.image} alt={user.username} /> : <img src="https://heuft.com/upload/image/400x267/no_image_placeholder.png" />
   // }
-  console.log(user.image)
+  console.log(user.image);
 
   return (
     <>
@@ -37,7 +37,14 @@ function MyProfile({ user, setUser, username, setUsername }) {
         <div className="userImage">
           {/* {imageOrPlaceholder()} */}
           {/* <img src={user.image} alt={user.username} /> */}
-          {user.image !== null ? <img src={user.image} alt={user.username} /> : <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" />}
+          {user.image !== null ? (
+            <img src={user.image} alt={user.username} />
+          ) : (
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg"
+              alt="placeholder"
+            />
+          )}
         </div>
         Username: {user.username}
         <br />
