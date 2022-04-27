@@ -1,3 +1,5 @@
+![Demo GIF](./nationparks.gif)
+
 ## Overview
 
 The **National Parks** app was created for my phase 4 project at Flatiron School. The purpose of this app is to allow users to look up national parks of the US and read information pertaining to them. This is intended as a proof-of-concept for a trip planning application.
@@ -19,6 +21,7 @@ HTML5<br>
 CSS
 
 ## Setup
+
 #### Front End
 
 cd phase-4-project-mincho-dylandupasquier/client<br>
